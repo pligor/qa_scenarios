@@ -1,0 +1,982 @@
+{
+  "created": 1671928547.14959,
+  "duration": 0.4920361042022705,
+  "exitcode": 0,
+  "root": "/Users/gp/Dropbox/projects/qa_scenarios",
+  "environment": {
+    "Python": "3.10.7",
+    "Platform": "macOS-13.0.1-arm64-arm-64bit",
+    "Packages": {
+      "pytest": "6.2.5",
+      "py": "1.11.0",
+      "pluggy": "1.0.0"
+    },
+    "Plugins": {
+      "variables": "2.0.0",
+      "xdist": "2.5.0",
+      "forked": "1.4.0",
+      "selenium": "4.0.0",
+      "parallel": "0.1.1",
+      "bdd": "6.0.1",
+      "json-report": "1.5.0",
+      "html": "3.1.1",
+      "base-url": "2.0.0",
+      "reportportal": "5.1.2",
+      "anyio": "3.6.2",
+      "allure-pytest": "2.11.1",
+      "metadata": "2.0.2"
+    },
+    "JAVA_HOME": "/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home",
+    "Base URL": "",
+    "Driver": null,
+    "Capabilities": {}
+  },
+  "summary": {
+    "skipped": 19,
+    "total": 19,
+    "collected": 19
+  },
+  "collectors": [
+    {
+      "nodeid": "",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py",
+          "type": "Module"
+        }
+      ]
+    },
+    {
+      "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_using_a_user_who_has_not_verified_his_her_email_address_but_is_attempting_to_verify_his_her_mobile_phone_number_this_will_yield_a_corresponding_error_message_that_will_explain_to_the_user_of_what_actions_he_she_needs_to_take_in_order_to_proceed_with_the_verification_of_the_mobile_phone_number",
+          "type": "Function",
+          "lineno": 183
+        },
+        {
+          "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_a_user_who_has_verified_his_her_email_address_when_attempting_to_verify_his_her_mobile_phone_number_this_will_be_successful_given_that_the_phone_number_is_valid_and_the_4_digit_code_that_the_user_received_as_otp_was_used_properly",
+          "type": "Function",
+          "lineno": 183
+        },
+        {
+          "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_a_user_who_has_logged_in_using_any_social_network_who_has_not_yet_verified_his_phone_number_he_is_allowed_to_verify_his_a_phone_number",
+          "type": "Function",
+          "lineno": 183
+        },
+        {
+          "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_a_user_who_has_not_verified_his_phone_number_when_attempting_either_from_the_report_button_of_the_home_screen_or_from_the_plus_icon_button_of_mycity_screen_he_will_receive_an_error_message_explaining_to_him_that_first_his_phone_number_needs_to_be_verified_before_submitting_any_report",
+          "type": "Function",
+          "lineno": 183
+        },
+        {
+          "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_a_user_who_has_already_verified_his_phone_number_even_if_he_updated_his_email_and_currently_is_pending_for_verification_he_will_still_be_allowed_to_send_as_many_reports_as_he_wishes_to",
+          "type": "Function",
+          "lineno": 183
+        },
+        {
+          "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_for_a_single_user_who_has_already_executed_10_requests_for_verification_of_any_email_addresses_executing_an_11th_request_for_verification_of_an_email_address_within_a_month_should_not_be_allowed_and_the_user_should_receive_an_error_message_explaining_to_him_when_the_next_attempt_to_verify_an_email_address_can_happen",
+          "type": "Function",
+          "lineno": 183
+        },
+        {
+          "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_for_a_single_user_executing_10_requests_for_verification_of_some_phone_number_within_a_month_should_be_allowed",
+          "type": "Function",
+          "lineno": 183
+        },
+        {
+          "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_for_a_single_user_who_has_executed_9_requests_for_verification_of_some_email_addresses_plus_9_requests_for_verification_of_some_phone_numbers_then_attempting_to_execute_a_10th_request_for_the_verification_of_an_email_address_should_be_allowed",
+          "type": "Function",
+          "lineno": 183
+        },
+        {
+          "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_for_a_single_user_who_has_executed_10_requests_for_verification_of_some_email_addresses_plus_9_requests_for_verification_of_some_phone_numbers_should_not_be_allowed_to_execute_a_verification_of_an_email_address_but_should_be_allowed_to_execute_a_verification_of_some_phone_number",
+          "type": "Function",
+          "lineno": 183
+        },
+        {
+          "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_for_a_single_user_who_has_executed_10_requests_for_verification_of_some_email_addresses_plus_10_requests_for_verification_of_some_phone_numbers_should_not_be_allowed_to_execute_a_verification_of_an_email_address_nor_he_should_be_allowed_to_execute_a_verification_of_any_phone_number_for_within_the_month",
+          "type": "Function",
+          "lineno": 183
+        },
+        {
+          "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_for_a_single_user_who_has_executed_10_requests_for_verification_of_some_email_addresses_plus_10_requests_for_verification_of_some_phone_numbers_if_the_period_of_the_one_month_has_passed_then_the_user_will_be_allowed_to_execute_a_verification_both_for_some_email_address_and_for_some_phone_number",
+          "type": "Function",
+          "lineno": 183
+        },
+        {
+          "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_a_user_who_had_verify_his_her_email_address_but_has_changed_his_her_email_address_and_thus_this_is_deemed_as_no_longer_valid_if_he_has_not_yet_verified_his_phone_number_he_will_not_be_allowed_to_verify_it_until_the_new_updated_email_is_also_verified",
+          "type": "Function",
+          "lineno": 183
+        },
+        {
+          "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_a_user_who_had_verify_his_her_email_address_but_has_changed_his_her_email_address_and_thus_this_is_deemed_as_no_longer_valid_if_he_had_already_verified_his_phone_number_then_he_will_not_be_forced_to_verify_his_phone_number_once_more",
+          "type": "Function",
+          "lineno": 183
+        },
+        {
+          "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_a_user_who_has_logged_in_using_any_social_network_who_has_already_verified_his_phone_number_he_is_allowed_to_verify_a_second_phone_number_given_which_will_replace_the_first_one",
+          "type": "Function",
+          "lineno": 183
+        },
+        {
+          "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_a_user_who_has_logged_in_using_any_social_network_who_has_already_verified_his_phone_number_then_this_user_is_allowed_to_create_file_as_many_reports_as_he_wishes_to",
+          "type": "Function",
+          "lineno": 183
+        },
+        {
+          "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_for_a_single_user_executing_10_requests_for_verification_of_some_email_addresses_within_a_month_should_be_allowed",
+          "type": "Function",
+          "lineno": 183
+        },
+        {
+          "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_for_a_single_user_who_has_already_executed_10_requests_for_verification_of_any_phone_numbers_executing_an_11th_request_for_verification_of_a_phone_number_within_a_month_should_not_be_allowed_and_the_user_should_receive_an_error_message_explaining_to_him_when_the_next_attempt_to_verify_his_phone_number_can_happen",
+          "type": "Function",
+          "lineno": 183
+        },
+        {
+          "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_a_user_who_has_logged_in_using_any_social_network_who_has_not_yet_verified_his_phone_number_then_this_user_is_not_allowed_to_create_file_any_report",
+          "type": "Function",
+          "lineno": 183
+        },
+        {
+          "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_a_user_who_has_already_verified_his_phone_number_if_he_attempts_to_reverify_the_exact_same_phone_numbers_an_informative_message_should_explain_to_the_user_that_he_cannot_re_verify_the_same_phone_number_or_he_will_not_be_able_to_proceed_with_the_verification_of_the_phone_number_at_all_the_submit_button_will_be_disabled",
+          "type": "Function",
+          "lineno": 183
+        }
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_using_a_user_who_has_not_verified_his_her_email_address_but_is_attempting_to_verify_his_her_mobile_phone_number_this_will_yield_a_corresponding_error_message_that_will_explain_to_the_user_of_what_actions_he_she_needs_to_take_in_order_to_proceed_with_the_verification_of_the_mobile_phone_number",
+      "lineno": 183,
+      "outcome": "skipped",
+      "keywords": [
+        "usefixtures",
+        "NVDEVEL-2167",
+        "test_verify_that_using_a_user_who_has_not_verified_his_her_email_address_but_is_attempting_to_verify_his_her_mobile_phone_number_this_will_yield_a_corresponding_error_message_that_will_explain_to_the_user_of_what_actions_he_she_needs_to_take_in_order_to_proceed_with_the_verification_of_the_mobile_phone_number",
+        "__scenario__",
+        "security",
+        "test/test_manual/api/security_on_resources_2022-12-25.py",
+        "web",
+        "smoke",
+        "mobile",
+        "NVDEVEL-2508",
+        "prio_critical",
+        "pytestmark",
+        "qa_scenarios",
+        "CKA9FBRuijCvmjfyUmubDqj"
+      ],
+      "setup": {
+        "duration": 0.0017875829944387078,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00012737500946968794,
+        "outcome": "skipped",
+        "longrepr": "('/Users/gp/Dropbox/projects/qa_scenarios/test/test_manual/__init__.py', 32, 'Skipped: Skipping scenario Verify that using a user who has not verified his/her email address but is attempting to verify his/her mobile phone number, this will yield a corresponding error message that will explain to the user of what actions he/she needs to take in order to proceed with the verification of the mobile phone number as untested')"
+      },
+      "teardown": {
+        "duration": 0.0009281669626943767,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_a_user_who_has_verified_his_her_email_address_when_attempting_to_verify_his_her_mobile_phone_number_this_will_be_successful_given_that_the_phone_number_is_valid_and_the_4_digit_code_that_the_user_received_as_otp_was_used_properly",
+      "lineno": 183,
+      "outcome": "skipped",
+      "keywords": [
+        "usefixtures",
+        "NVDEVEL-2167",
+        "test_verify_that_a_user_who_has_verified_his_her_email_address_when_attempting_to_verify_his_her_mobile_phone_number_this_will_be_successful_given_that_the_phone_number_is_valid_and_the_4_digit_code_that_the_user_received_as_otp_was_used_properly",
+        "__scenario__",
+        "security",
+        "test/test_manual/api/security_on_resources_2022-12-25.py",
+        "web",
+        "smoke",
+        "mobile",
+        "C2QeNg6kHXv36iBh6xTHTjG",
+        "NVDEVEL-2508",
+        "prio_critical",
+        "pytestmark",
+        "qa_scenarios"
+      ],
+      "setup": {
+        "duration": 0.00025995803298428655,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 8.699996396899223e-05,
+        "outcome": "skipped",
+        "longrepr": "('/Users/gp/Dropbox/projects/qa_scenarios/test/test_manual/__init__.py', 32, 'Skipped: Skipping scenario Verify that a user who has verified his/her email address when attempting to verify his/her mobile phone number, this will be successful given that the phone number is valid and the 4 digit code that the user received as OTP was used properly as untested')"
+      },
+      "teardown": {
+        "duration": 0.00035491702146828175,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_a_user_who_has_logged_in_using_any_social_network_who_has_not_yet_verified_his_phone_number_he_is_allowed_to_verify_his_a_phone_number",
+      "lineno": 183,
+      "outcome": "skipped",
+      "keywords": [
+        "usefixtures",
+        "NVDEVEL-2167",
+        "CHf2Vv2zrDAHf3JmJySKYqv",
+        "__scenario__",
+        "security",
+        "test/test_manual/api/security_on_resources_2022-12-25.py",
+        "test_verify_that_a_user_who_has_logged_in_using_any_social_network_who_has_not_yet_verified_his_phone_number_he_is_allowed_to_verify_his_a_phone_number",
+        "web",
+        "mobile",
+        "NVDEVEL-2508",
+        "prio_critical",
+        "pytestmark",
+        "qa_scenarios"
+      ],
+      "setup": {
+        "duration": 0.0002288329997099936,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 8.387496927753091e-05,
+        "outcome": "skipped",
+        "longrepr": "('/Users/gp/Dropbox/projects/qa_scenarios/test/test_manual/__init__.py', 32, 'Skipped: Skipping scenario Verify that a user who has logged in using any Social Network, who has not yet verified his phone number, he is allowed to verify his a phone number as untested')"
+      },
+      "teardown": {
+        "duration": 0.000333709002006799,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_a_user_who_has_not_verified_his_phone_number_when_attempting_either_from_the_report_button_of_the_home_screen_or_from_the_plus_icon_button_of_mycity_screen_he_will_receive_an_error_message_explaining_to_him_that_first_his_phone_number_needs_to_be_verified_before_submitting_any_report",
+      "lineno": 183,
+      "outcome": "skipped",
+      "keywords": [
+        "usefixtures",
+        "CYFqx4iXMiapj4DK9Pnrbqx",
+        "NVDEVEL-2167",
+        "__scenario__",
+        "security",
+        "test/test_manual/api/security_on_resources_2022-12-25.py",
+        "test_verify_that_a_user_who_has_not_verified_his_phone_number_when_attempting_either_from_the_report_button_of_the_home_screen_or_from_the_plus_icon_button_of_mycity_screen_he_will_receive_an_error_message_explaining_to_him_that_first_his_phone_number_needs_to_be_verified_before_submitting_any_report",
+        "web",
+        "mobile",
+        "NVDEVEL-2508",
+        "prio_critical",
+        "pytestmark",
+        "qa_scenarios"
+      ],
+      "setup": {
+        "duration": 0.0002963750157505274,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 8.195801638066769e-05,
+        "outcome": "skipped",
+        "longrepr": "('/Users/gp/Dropbox/projects/qa_scenarios/test/test_manual/__init__.py', 32, 'Skipped: Skipping scenario Verify that a user who has not verified his phone number when attempting either from the Report button of the Home screen or from the plus-icon button of MyCity screen, he will receive an error message explaining to him that first his phone number needs to be verified before submitting any report as untested')"
+      },
+      "teardown": {
+        "duration": 0.00037941703340038657,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_a_user_who_has_already_verified_his_phone_number_even_if_he_updated_his_email_and_currently_is_pending_for_verification_he_will_still_be_allowed_to_send_as_many_reports_as_he_wishes_to",
+      "lineno": 183,
+      "outcome": "skipped",
+      "keywords": [
+        "usefixtures",
+        "NVDEVEL-2167",
+        "CJSLGRfcEZqpNsbLFDfbxDu",
+        "__scenario__",
+        "security",
+        "test/test_manual/api/security_on_resources_2022-12-25.py",
+        "test_verify_that_a_user_who_has_already_verified_his_phone_number_even_if_he_updated_his_email_and_currently_is_pending_for_verification_he_will_still_be_allowed_to_send_as_many_reports_as_he_wishes_to",
+        "web",
+        "mobile",
+        "NVDEVEL-2508",
+        "prio_critical",
+        "pytestmark",
+        "qa_scenarios"
+      ],
+      "setup": {
+        "duration": 0.0002210419625043869,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 8.233299013227224e-05,
+        "outcome": "skipped",
+        "longrepr": "('/Users/gp/Dropbox/projects/qa_scenarios/test/test_manual/__init__.py', 32, 'Skipped: Skipping scenario Verify that a user who has already verified his phone number, even if he updated his email and currently is pending for verification, he will still be allowed to send as many Reports as he wishes to as untested')"
+      },
+      "teardown": {
+        "duration": 0.00038962496910244226,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_for_a_single_user_who_has_already_executed_10_requests_for_verification_of_any_email_addresses_executing_an_11th_request_for_verification_of_an_email_address_within_a_month_should_not_be_allowed_and_the_user_should_receive_an_error_message_explaining_to_him_when_the_next_attempt_to_verify_an_email_address_can_happen",
+      "lineno": 183,
+      "outcome": "skipped",
+      "keywords": [
+        "usefixtures",
+        "NVDEVEL-2167",
+        "test_verify_that_for_a_single_user_who_has_already_executed_10_requests_for_verification_of_any_email_addresses_executing_an_11th_request_for_verification_of_an_email_address_within_a_month_should_not_be_allowed_and_the_user_should_receive_an_error_message_explaining_to_him_when_the_next_attempt_to_verify_an_email_address_can_happen",
+        "__scenario__",
+        "security",
+        "test/test_manual/api/security_on_resources_2022-12-25.py",
+        "web",
+        "mobile",
+        "NVDEVEL-2508",
+        "Cn47xbPm6z76TkmZ7U68ABa",
+        "pytestmark",
+        "qa_scenarios",
+        "prio_critical"
+      ],
+      "setup": {
+        "duration": 0.00022833398543298244,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 8.270901162177324e-05,
+        "outcome": "skipped",
+        "longrepr": "('/Users/gp/Dropbox/projects/qa_scenarios/test/test_manual/__init__.py', 32, 'Skipped: Skipping scenario Verify that for a single user, who has already executed 10 requests for verification of any email addresses, executing an 11th request for verification of an email address, within a month should NOT be allowed, and the user should receive an error message explaining to him when the next attempt to verify an email address can happen as untested')"
+      },
+      "teardown": {
+        "duration": 0.00043766701128333807,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_for_a_single_user_executing_10_requests_for_verification_of_some_phone_number_within_a_month_should_be_allowed",
+      "lineno": 183,
+      "outcome": "skipped",
+      "keywords": [
+        "usefixtures",
+        "NVDEVEL-2167",
+        "__scenario__",
+        "security",
+        "test/test_manual/api/security_on_resources_2022-12-25.py",
+        "test_verify_that_for_a_single_user_executing_10_requests_for_verification_of_some_phone_number_within_a_month_should_be_allowed",
+        "web",
+        "mobile",
+        "NVDEVEL-2508",
+        "prio_critical",
+        "pytestmark",
+        "qa_scenarios",
+        "CkoVxwZwUzejeXYxYtzrGTv"
+      ],
+      "setup": {
+        "duration": 0.00022087496472522616,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 8.029199671000242e-05,
+        "outcome": "skipped",
+        "longrepr": "('/Users/gp/Dropbox/projects/qa_scenarios/test/test_manual/__init__.py', 32, 'Skipped: Skipping scenario Verify that for a single user, executing 10 requests for verification of some phone number, within a month should be allowed as untested')"
+      },
+      "teardown": {
+        "duration": 0.00037770799826830626,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_for_a_single_user_who_has_executed_9_requests_for_verification_of_some_email_addresses_plus_9_requests_for_verification_of_some_phone_numbers_then_attempting_to_execute_a_10th_request_for_the_verification_of_an_email_address_should_be_allowed",
+      "lineno": 183,
+      "outcome": "skipped",
+      "keywords": [
+        "usefixtures",
+        "NVDEVEL-2167",
+        "CGec4kQ9PdGFxgE9YiBgZEP",
+        "__scenario__",
+        "security",
+        "test/test_manual/api/security_on_resources_2022-12-25.py",
+        "test_verify_that_for_a_single_user_who_has_executed_9_requests_for_verification_of_some_email_addresses_plus_9_requests_for_verification_of_some_phone_numbers_then_attempting_to_execute_a_10th_request_for_the_verification_of_an_email_address_should_be_allowed",
+        "web",
+        "mobile",
+        "NVDEVEL-2508",
+        "prio_critical",
+        "pytestmark",
+        "qa_scenarios"
+      ],
+      "setup": {
+        "duration": 0.0002187080099247396,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 8.141697617247701e-05,
+        "outcome": "skipped",
+        "longrepr": "('/Users/gp/Dropbox/projects/qa_scenarios/test/test_manual/__init__.py', 32, 'Skipped: Skipping scenario Verify that for a single user, who has executed 9 requests for verification of some email addresses, plus 9 requests for verification of some phone numbers, then attempting to execute a 10th request for the verification of an email address should be allowed as untested')"
+      },
+      "teardown": {
+        "duration": 0.000348250032402575,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_for_a_single_user_who_has_executed_10_requests_for_verification_of_some_email_addresses_plus_9_requests_for_verification_of_some_phone_numbers_should_not_be_allowed_to_execute_a_verification_of_an_email_address_but_should_be_allowed_to_execute_a_verification_of_some_phone_number",
+      "lineno": 183,
+      "outcome": "skipped",
+      "keywords": [
+        "usefixtures",
+        "NVDEVEL-2167",
+        "CMVPNTHYnTfoiMx5euThM5m",
+        "test_verify_that_for_a_single_user_who_has_executed_10_requests_for_verification_of_some_email_addresses_plus_9_requests_for_verification_of_some_phone_numbers_should_not_be_allowed_to_execute_a_verification_of_an_email_address_but_should_be_allowed_to_execute_a_verification_of_some_phone_number",
+        "__scenario__",
+        "security",
+        "test/test_manual/api/security_on_resources_2022-12-25.py",
+        "web",
+        "mobile",
+        "NVDEVEL-2508",
+        "prio_critical",
+        "pytestmark",
+        "qa_scenarios"
+      ],
+      "setup": {
+        "duration": 0.00022074999287724495,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 8.479197276756167e-05,
+        "outcome": "skipped",
+        "longrepr": "('/Users/gp/Dropbox/projects/qa_scenarios/test/test_manual/__init__.py', 32, 'Skipped: Skipping scenario Verify that for a single user, who has executed 10 requests for verification of some email addresses, plus 9 requests for verification of some phone numbers, should NOT be allowed to execute a verification of an email address but should be allowed to execute a verification of some phone number as untested')"
+      },
+      "teardown": {
+        "duration": 0.00036912504583597183,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_for_a_single_user_who_has_executed_10_requests_for_verification_of_some_email_addresses_plus_10_requests_for_verification_of_some_phone_numbers_should_not_be_allowed_to_execute_a_verification_of_an_email_address_nor_he_should_be_allowed_to_execute_a_verification_of_any_phone_number_for_within_the_month",
+      "lineno": 183,
+      "outcome": "skipped",
+      "keywords": [
+        "usefixtures",
+        "NVDEVEL-2167",
+        "test_verify_that_for_a_single_user_who_has_executed_10_requests_for_verification_of_some_email_addresses_plus_10_requests_for_verification_of_some_phone_numbers_should_not_be_allowed_to_execute_a_verification_of_an_email_address_nor_he_should_be_allowed_to_execute_a_verification_of_any_phone_number_for_within_the_month",
+        "__scenario__",
+        "security",
+        "test/test_manual/api/security_on_resources_2022-12-25.py",
+        "qa_scenarios",
+        "web",
+        "mobile",
+        "NVDEVEL-2508",
+        "prio_critical",
+        "pytestmark",
+        "CNurYxNDJ7twurrjJSe4xLw"
+      ],
+      "setup": {
+        "duration": 0.00024320901138707995,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 9.354099165648222e-05,
+        "outcome": "skipped",
+        "longrepr": "('/Users/gp/Dropbox/projects/qa_scenarios/test/test_manual/__init__.py', 32, 'Skipped: Skipping scenario Verify that for a single user, who has executed 10 requests for verification of some email addresses, plus 10 requests for verification of some phone numbers, should NOT be allowed to execute a verification of an email address NOR he should be allowed to execute a verification of any phone number, for within the month as untested')"
+      },
+      "teardown": {
+        "duration": 0.00040241703391075134,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_for_a_single_user_who_has_executed_10_requests_for_verification_of_some_email_addresses_plus_10_requests_for_verification_of_some_phone_numbers_if_the_period_of_the_one_month_has_passed_then_the_user_will_be_allowed_to_execute_a_verification_both_for_some_email_address_and_for_some_phone_number",
+      "lineno": 183,
+      "outcome": "skipped",
+      "keywords": [
+        "usefixtures",
+        "NVDEVEL-2167",
+        "__scenario__",
+        "CWcJDX2uSmDuiDP4RHh7Ghb",
+        "security",
+        "test/test_manual/api/security_on_resources_2022-12-25.py",
+        "web",
+        "mobile",
+        "NVDEVEL-2508",
+        "prio_critical",
+        "pytestmark",
+        "qa_scenarios",
+        "test_verify_that_for_a_single_user_who_has_executed_10_requests_for_verification_of_some_email_addresses_plus_10_requests_for_verification_of_some_phone_numbers_if_the_period_of_the_one_month_has_passed_then_the_user_will_be_allowed_to_execute_a_verification_both_for_some_email_address_and_for_some_phone_number"
+      ],
+      "setup": {
+        "duration": 0.00023599999258294702,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 9.216699982061982e-05,
+        "outcome": "skipped",
+        "longrepr": "('/Users/gp/Dropbox/projects/qa_scenarios/test/test_manual/__init__.py', 32, 'Skipped: Skipping scenario Verify that for a single user, who has executed 10 requests for verification of some email addresses, plus 10 requests for verification of some phone numbers, if the period of the One Month has passed, then the user will be allowed to execute a verification both for some email address and for some phone number as untested')"
+      },
+      "teardown": {
+        "duration": 0.0004917089827358723,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_a_user_who_had_verify_his_her_email_address_but_has_changed_his_her_email_address_and_thus_this_is_deemed_as_no_longer_valid_if_he_has_not_yet_verified_his_phone_number_he_will_not_be_allowed_to_verify_it_until_the_new_updated_email_is_also_verified",
+      "lineno": 183,
+      "outcome": "skipped",
+      "keywords": [
+        "usefixtures",
+        "NVDEVEL-2167",
+        "__scenario__",
+        "security",
+        "prio_major",
+        "test/test_manual/api/security_on_resources_2022-12-25.py",
+        "web",
+        "mobile",
+        "NVDEVEL-2508",
+        "CZmsEEvXvoTDUbr4JwkKnX8",
+        "pytestmark",
+        "qa_scenarios",
+        "test_verify_that_a_user_who_had_verify_his_her_email_address_but_has_changed_his_her_email_address_and_thus_this_is_deemed_as_no_longer_valid_if_he_has_not_yet_verified_his_phone_number_he_will_not_be_allowed_to_verify_it_until_the_new_updated_email_is_also_verified"
+      ],
+      "setup": {
+        "duration": 0.0005073749925941229,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00012491701636463404,
+        "outcome": "skipped",
+        "longrepr": "('/Users/gp/Dropbox/projects/qa_scenarios/test/test_manual/__init__.py', 32, 'Skipped: Skipping scenario Verify that a user who had verify his/her email address, but has changed his/her email address, and thus this is deemed as no longer valid, if he has not yet verified his phone number, he will NOT be allowed to verify it until the new/updated email is also verified as untested')"
+      },
+      "teardown": {
+        "duration": 0.0010603750124573708,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_a_user_who_had_verify_his_her_email_address_but_has_changed_his_her_email_address_and_thus_this_is_deemed_as_no_longer_valid_if_he_had_already_verified_his_phone_number_then_he_will_not_be_forced_to_verify_his_phone_number_once_more",
+      "lineno": 183,
+      "outcome": "skipped",
+      "keywords": [
+        "usefixtures",
+        "NVDEVEL-2167",
+        "CCnC6uTsiEroqMpr76ajuLH",
+        "__scenario__",
+        "security",
+        "test_verify_that_a_user_who_had_verify_his_her_email_address_but_has_changed_his_her_email_address_and_thus_this_is_deemed_as_no_longer_valid_if_he_had_already_verified_his_phone_number_then_he_will_not_be_forced_to_verify_his_phone_number_once_more",
+        "prio_major",
+        "test/test_manual/api/security_on_resources_2022-12-25.py",
+        "web",
+        "mobile",
+        "NVDEVEL-2508",
+        "pytestmark",
+        "qa_scenarios"
+      ],
+      "setup": {
+        "duration": 0.00035095802741125226,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00012149999383836985,
+        "outcome": "skipped",
+        "longrepr": "('/Users/gp/Dropbox/projects/qa_scenarios/test/test_manual/__init__.py', 32, 'Skipped: Skipping scenario Verify that a user who had verify his/her email address, but has changed his/her email address, and thus this is deemed as no longer valid, if he had already verified his phone number, then he will NOT be forced to verify his phone number once more as untested')"
+      },
+      "teardown": {
+        "duration": 0.0004526250413618982,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_a_user_who_has_logged_in_using_any_social_network_who_has_already_verified_his_phone_number_he_is_allowed_to_verify_a_second_phone_number_given_which_will_replace_the_first_one",
+      "lineno": 183,
+      "outcome": "skipped",
+      "keywords": [
+        "usefixtures",
+        "NVDEVEL-2167",
+        "test_verify_that_a_user_who_has_logged_in_using_any_social_network_who_has_already_verified_his_phone_number_he_is_allowed_to_verify_a_second_phone_number_given_which_will_replace_the_first_one",
+        "__scenario__",
+        "security",
+        "prio_major",
+        "test/test_manual/api/security_on_resources_2022-12-25.py",
+        "web",
+        "CK2scSDgMNDx2n226dQsbFL",
+        "mobile",
+        "NVDEVEL-2508",
+        "pytestmark",
+        "qa_scenarios"
+      ],
+      "setup": {
+        "duration": 0.000253707985393703,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 9.8082993645221e-05,
+        "outcome": "skipped",
+        "longrepr": "('/Users/gp/Dropbox/projects/qa_scenarios/test/test_manual/__init__.py', 32, 'Skipped: Skipping scenario Verify that a user who has logged in using any Social Network, who has already verified his phone number, he is allowed to verify a second phone number given, which will replace the first one as untested')"
+      },
+      "teardown": {
+        "duration": 0.0004912910517305136,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_a_user_who_has_logged_in_using_any_social_network_who_has_already_verified_his_phone_number_then_this_user_is_allowed_to_create_file_as_many_reports_as_he_wishes_to",
+      "lineno": 183,
+      "outcome": "skipped",
+      "keywords": [
+        "usefixtures",
+        "NVDEVEL-2167",
+        "CeRVPh9ov5rLZEDGYF7oRdy",
+        "__scenario__",
+        "test_verify_that_a_user_who_has_logged_in_using_any_social_network_who_has_already_verified_his_phone_number_then_this_user_is_allowed_to_create_file_as_many_reports_as_he_wishes_to",
+        "security",
+        "prio_major",
+        "test/test_manual/api/security_on_resources_2022-12-25.py",
+        "web",
+        "mobile",
+        "NVDEVEL-2508",
+        "pytestmark",
+        "qa_scenarios"
+      ],
+      "setup": {
+        "duration": 0.00025120796635746956,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 9.566597873345017e-05,
+        "outcome": "skipped",
+        "longrepr": "('/Users/gp/Dropbox/projects/qa_scenarios/test/test_manual/__init__.py', 32, 'Skipped: Skipping scenario Verify that a user who has logged in using any Social Network, who has already verified his phone number, then this user is allowed to create/file as many Reports as he wishes to as untested')"
+      },
+      "teardown": {
+        "duration": 0.0003724590060301125,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_for_a_single_user_executing_10_requests_for_verification_of_some_email_addresses_within_a_month_should_be_allowed",
+      "lineno": 183,
+      "outcome": "skipped",
+      "keywords": [
+        "usefixtures",
+        "NVDEVEL-2167",
+        "CKfw7DeDhgUVhDVX6mDyajW",
+        "__scenario__",
+        "security",
+        "prio_major",
+        "test/test_manual/api/security_on_resources_2022-12-25.py",
+        "qa_scenarios",
+        "web",
+        "mobile",
+        "NVDEVEL-2508",
+        "pytestmark",
+        "test_verify_that_for_a_single_user_executing_10_requests_for_verification_of_some_email_addresses_within_a_month_should_be_allowed"
+      ],
+      "setup": {
+        "duration": 0.0002369590220041573,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 9.308301378041506e-05,
+        "outcome": "skipped",
+        "longrepr": "('/Users/gp/Dropbox/projects/qa_scenarios/test/test_manual/__init__.py', 32, 'Skipped: Skipping scenario Verify that for a single user, executing 10 requests for verification of some email addresses, within a month should be allowed as untested')"
+      },
+      "teardown": {
+        "duration": 0.00036824995186179876,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_for_a_single_user_who_has_already_executed_10_requests_for_verification_of_any_phone_numbers_executing_an_11th_request_for_verification_of_a_phone_number_within_a_month_should_not_be_allowed_and_the_user_should_receive_an_error_message_explaining_to_him_when_the_next_attempt_to_verify_his_phone_number_can_happen",
+      "lineno": 183,
+      "outcome": "skipped",
+      "keywords": [
+        "usefixtures",
+        "test_verify_that_for_a_single_user_who_has_already_executed_10_requests_for_verification_of_any_phone_numbers_executing_an_11th_request_for_verification_of_a_phone_number_within_a_month_should_not_be_allowed_and_the_user_should_receive_an_error_message_explaining_to_him_when_the_next_attempt_to_verify_his_phone_number_can_happen",
+        "NVDEVEL-2167",
+        "__scenario__",
+        "security",
+        "prio_major",
+        "test/test_manual/api/security_on_resources_2022-12-25.py",
+        "C9vrbqcssJxZAUcX5gnAos5",
+        "web",
+        "mobile",
+        "NVDEVEL-2508",
+        "pytestmark",
+        "qa_scenarios"
+      ],
+      "setup": {
+        "duration": 0.00023762497585266829,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 8.654198609292507e-05,
+        "outcome": "skipped",
+        "longrepr": "('/Users/gp/Dropbox/projects/qa_scenarios/test/test_manual/__init__.py', 32, 'Skipped: Skipping scenario Verify that for a single user, who has already executed 10 requests for verification of any phone numbers, executing an 11th request for verification of a phone number, within a month should NOT be allowed, and the user should receive an error message explaining to him when the next attempt to verify his phone number can happen as untested')"
+      },
+      "teardown": {
+        "duration": 0.00035687501076608896,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_a_user_who_has_logged_in_using_any_social_network_who_has_not_yet_verified_his_phone_number_then_this_user_is_not_allowed_to_create_file_any_report",
+      "lineno": 183,
+      "outcome": "skipped",
+      "keywords": [
+        "usefixtures",
+        "prio_minor",
+        "NVDEVEL-2167",
+        "Cma2yZ865MmhSEoQspNhNAS",
+        "__scenario__",
+        "security",
+        "test/test_manual/api/security_on_resources_2022-12-25.py",
+        "test_verify_that_a_user_who_has_logged_in_using_any_social_network_who_has_not_yet_verified_his_phone_number_then_this_user_is_not_allowed_to_create_file_any_report",
+        "web",
+        "mobile",
+        "NVDEVEL-2508",
+        "pytestmark",
+        "qa_scenarios"
+      ],
+      "setup": {
+        "duration": 0.00022908399114385247,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 8.350005373358727e-05,
+        "outcome": "skipped",
+        "longrepr": "('/Users/gp/Dropbox/projects/qa_scenarios/test/test_manual/__init__.py', 32, 'Skipped: Skipping scenario Verify that a user who has logged in using any Social Network, who has not yet verified his phone number, then this user is NOT allowed to create/file any Report as untested')"
+      },
+      "teardown": {
+        "duration": 0.0003386249882169068,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test/test_manual/api/security_on_resources_2022-12-25.py::test_verify_that_a_user_who_has_already_verified_his_phone_number_if_he_attempts_to_reverify_the_exact_same_phone_numbers_an_informative_message_should_explain_to_the_user_that_he_cannot_re_verify_the_same_phone_number_or_he_will_not_be_able_to_proceed_with_the_verification_of_the_phone_number_at_all_the_submit_button_will_be_disabled",
+      "lineno": 183,
+      "outcome": "skipped",
+      "keywords": [
+        "usefixtures",
+        "prio_minor",
+        "Cdn5sTWjQf4C6rYFVqjzGdM",
+        "NVDEVEL-2167",
+        "__scenario__",
+        "security",
+        "test/test_manual/api/security_on_resources_2022-12-25.py",
+        "web",
+        "regression",
+        "mobile",
+        "NVDEVEL-2508",
+        "test_verify_that_a_user_who_has_already_verified_his_phone_number_if_he_attempts_to_reverify_the_exact_same_phone_numbers_an_informative_message_should_explain_to_the_user_that_he_cannot_re_verify_the_same_phone_number_or_he_will_not_be_able_to_proceed_with_the_verification_of_the_phone_number_at_all_the_submit_button_will_be_disabled",
+        "pytestmark",
+        "qa_scenarios"
+      ],
+      "setup": {
+        "duration": 0.00022508297115564346,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 8.099997648969293e-05,
+        "outcome": "skipped",
+        "longrepr": "('/Users/gp/Dropbox/projects/qa_scenarios/test/test_manual/__init__.py', 32, 'Skipped: Skipping scenario Verify that a user who has already verified his phone number, if he attempts to reverify the exact same phone numbers, an informative message should explain to the user that he cannot re-verify the same phone number or he will not be able to proceed with the verification of the phone number at all (the submit button will be disabled) as untested')"
+      },
+      "teardown": {
+        "duration": 0.4422527499846183,
+        "outcome": "passed"
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "message": "Unknown pytest.mark.NVDEVEL-2167 - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/mark.html",
+      "category": "PytestUnknownMarkWarning",
+      "when": "collect",
+      "filename": "/Users/gp/.pyenv/versions/whatenv/lib/python3.10/site-packages/pytest_bdd/plugin.py",
+      "lineno": 127
+    },
+    {
+      "message": "Unknown pytest.mark.security - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/mark.html",
+      "category": "PytestUnknownMarkWarning",
+      "when": "collect",
+      "filename": "/Users/gp/.pyenv/versions/whatenv/lib/python3.10/site-packages/pytest_bdd/plugin.py",
+      "lineno": 127
+    },
+    {
+      "message": "Unknown pytest.mark.web - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/mark.html",
+      "category": "PytestUnknownMarkWarning",
+      "when": "collect",
+      "filename": "/Users/gp/.pyenv/versions/whatenv/lib/python3.10/site-packages/pytest_bdd/plugin.py",
+      "lineno": 127
+    },
+    {
+      "message": "Unknown pytest.mark.mobile - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/mark.html",
+      "category": "PytestUnknownMarkWarning",
+      "when": "collect",
+      "filename": "/Users/gp/.pyenv/versions/whatenv/lib/python3.10/site-packages/pytest_bdd/plugin.py",
+      "lineno": 127
+    },
+    {
+      "message": "Unknown pytest.mark.NVDEVEL-2508 - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/mark.html",
+      "category": "PytestUnknownMarkWarning",
+      "when": "collect",
+      "filename": "/Users/gp/.pyenv/versions/whatenv/lib/python3.10/site-packages/pytest_bdd/plugin.py",
+      "lineno": 127
+    },
+    {
+      "message": "Unknown pytest.mark.prio_critical - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/mark.html",
+      "category": "PytestUnknownMarkWarning",
+      "when": "collect",
+      "filename": "/Users/gp/.pyenv/versions/whatenv/lib/python3.10/site-packages/pytest_bdd/plugin.py",
+      "lineno": 127
+    },
+    {
+      "message": "Unknown pytest.mark.CKA9FBRuijCvmjfyUmubDqj - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/mark.html",
+      "category": "PytestUnknownMarkWarning",
+      "when": "collect",
+      "filename": "/Users/gp/.pyenv/versions/whatenv/lib/python3.10/site-packages/pytest_bdd/plugin.py",
+      "lineno": 127
+    },
+    {
+      "message": "Unknown pytest.mark.C2QeNg6kHXv36iBh6xTHTjG - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/mark.html",
+      "category": "PytestUnknownMarkWarning",
+      "when": "collect",
+      "filename": "/Users/gp/.pyenv/versions/whatenv/lib/python3.10/site-packages/pytest_bdd/plugin.py",
+      "lineno": 127
+    },
+    {
+      "message": "Unknown pytest.mark.CHf2Vv2zrDAHf3JmJySKYqv - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/mark.html",
+      "category": "PytestUnknownMarkWarning",
+      "when": "collect",
+      "filename": "/Users/gp/.pyenv/versions/whatenv/lib/python3.10/site-packages/pytest_bdd/plugin.py",
+      "lineno": 127
+    },
+    {
+      "message": "Unknown pytest.mark.CYFqx4iXMiapj4DK9Pnrbqx - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/mark.html",
+      "category": "PytestUnknownMarkWarning",
+      "when": "collect",
+      "filename": "/Users/gp/.pyenv/versions/whatenv/lib/python3.10/site-packages/pytest_bdd/plugin.py",
+      "lineno": 127
+    },
+    {
+      "message": "Unknown pytest.mark.CJSLGRfcEZqpNsbLFDfbxDu - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/mark.html",
+      "category": "PytestUnknownMarkWarning",
+      "when": "collect",
+      "filename": "/Users/gp/.pyenv/versions/whatenv/lib/python3.10/site-packages/pytest_bdd/plugin.py",
+      "lineno": 127
+    },
+    {
+      "message": "Unknown pytest.mark.Cn47xbPm6z76TkmZ7U68ABa - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/mark.html",
+      "category": "PytestUnknownMarkWarning",
+      "when": "collect",
+      "filename": "/Users/gp/.pyenv/versions/whatenv/lib/python3.10/site-packages/pytest_bdd/plugin.py",
+      "lineno": 127
+    },
+    {
+      "message": "Unknown pytest.mark.CkoVxwZwUzejeXYxYtzrGTv - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/mark.html",
+      "category": "PytestUnknownMarkWarning",
+      "when": "collect",
+      "filename": "/Users/gp/.pyenv/versions/whatenv/lib/python3.10/site-packages/pytest_bdd/plugin.py",
+      "lineno": 127
+    },
+    {
+      "message": "Unknown pytest.mark.CGec4kQ9PdGFxgE9YiBgZEP - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/mark.html",
+      "category": "PytestUnknownMarkWarning",
+      "when": "collect",
+      "filename": "/Users/gp/.pyenv/versions/whatenv/lib/python3.10/site-packages/pytest_bdd/plugin.py",
+      "lineno": 127
+    },
+    {
+      "message": "Unknown pytest.mark.CMVPNTHYnTfoiMx5euThM5m - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/mark.html",
+      "category": "PytestUnknownMarkWarning",
+      "when": "collect",
+      "filename": "/Users/gp/.pyenv/versions/whatenv/lib/python3.10/site-packages/pytest_bdd/plugin.py",
+      "lineno": 127
+    },
+    {
+      "message": "Unknown pytest.mark.CNurYxNDJ7twurrjJSe4xLw - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/mark.html",
+      "category": "PytestUnknownMarkWarning",
+      "when": "collect",
+      "filename": "/Users/gp/.pyenv/versions/whatenv/lib/python3.10/site-packages/pytest_bdd/plugin.py",
+      "lineno": 127
+    },
+    {
+      "message": "Unknown pytest.mark.CWcJDX2uSmDuiDP4RHh7Ghb - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/mark.html",
+      "category": "PytestUnknownMarkWarning",
+      "when": "collect",
+      "filename": "/Users/gp/.pyenv/versions/whatenv/lib/python3.10/site-packages/pytest_bdd/plugin.py",
+      "lineno": 127
+    },
+    {
+      "message": "Unknown pytest.mark.prio_major - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/mark.html",
+      "category": "PytestUnknownMarkWarning",
+      "when": "collect",
+      "filename": "/Users/gp/.pyenv/versions/whatenv/lib/python3.10/site-packages/pytest_bdd/plugin.py",
+      "lineno": 127
+    },
+    {
+      "message": "Unknown pytest.mark.CZmsEEvXvoTDUbr4JwkKnX8 - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/mark.html",
+      "category": "PytestUnknownMarkWarning",
+      "when": "collect",
+      "filename": "/Users/gp/.pyenv/versions/whatenv/lib/python3.10/site-packages/pytest_bdd/plugin.py",
+      "lineno": 127
+    },
+    {
+      "message": "Unknown pytest.mark.CCnC6uTsiEroqMpr76ajuLH - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/mark.html",
+      "category": "PytestUnknownMarkWarning",
+      "when": "collect",
+      "filename": "/Users/gp/.pyenv/versions/whatenv/lib/python3.10/site-packages/pytest_bdd/plugin.py",
+      "lineno": 127
+    },
+    {
+      "message": "Unknown pytest.mark.CK2scSDgMNDx2n226dQsbFL - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/mark.html",
+      "category": "PytestUnknownMarkWarning",
+      "when": "collect",
+      "filename": "/Users/gp/.pyenv/versions/whatenv/lib/python3.10/site-packages/pytest_bdd/plugin.py",
+      "lineno": 127
+    },
+    {
+      "message": "Unknown pytest.mark.CeRVPh9ov5rLZEDGYF7oRdy - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/mark.html",
+      "category": "PytestUnknownMarkWarning",
+      "when": "collect",
+      "filename": "/Users/gp/.pyenv/versions/whatenv/lib/python3.10/site-packages/pytest_bdd/plugin.py",
+      "lineno": 127
+    },
+    {
+      "message": "Unknown pytest.mark.CKfw7DeDhgUVhDVX6mDyajW - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/mark.html",
+      "category": "PytestUnknownMarkWarning",
+      "when": "collect",
+      "filename": "/Users/gp/.pyenv/versions/whatenv/lib/python3.10/site-packages/pytest_bdd/plugin.py",
+      "lineno": 127
+    },
+    {
+      "message": "Unknown pytest.mark.C9vrbqcssJxZAUcX5gnAos5 - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/mark.html",
+      "category": "PytestUnknownMarkWarning",
+      "when": "collect",
+      "filename": "/Users/gp/.pyenv/versions/whatenv/lib/python3.10/site-packages/pytest_bdd/plugin.py",
+      "lineno": 127
+    },
+    {
+      "message": "Unknown pytest.mark.prio_minor - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/mark.html",
+      "category": "PytestUnknownMarkWarning",
+      "when": "collect",
+      "filename": "/Users/gp/.pyenv/versions/whatenv/lib/python3.10/site-packages/pytest_bdd/plugin.py",
+      "lineno": 127
+    },
+    {
+      "message": "Unknown pytest.mark.Cma2yZ865MmhSEoQspNhNAS - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/mark.html",
+      "category": "PytestUnknownMarkWarning",
+      "when": "collect",
+      "filename": "/Users/gp/.pyenv/versions/whatenv/lib/python3.10/site-packages/pytest_bdd/plugin.py",
+      "lineno": 127
+    },
+    {
+      "message": "Unknown pytest.mark.Cdn5sTWjQf4C6rYFVqjzGdM - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/mark.html",
+      "category": "PytestUnknownMarkWarning",
+      "when": "collect",
+      "filename": "/Users/gp/.pyenv/versions/whatenv/lib/python3.10/site-packages/pytest_bdd/plugin.py",
+      "lineno": 127
+    },
+    {
+      "message": "Unknown pytest.mark.regression - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/mark.html",
+      "category": "PytestUnknownMarkWarning",
+      "when": "collect",
+      "filename": "/Users/gp/.pyenv/versions/whatenv/lib/python3.10/site-packages/pytest_bdd/plugin.py",
+      "lineno": 127
+    }
+  ]
+}

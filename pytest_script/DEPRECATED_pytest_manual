@@ -1,0 +1,7 @@
+#!/bin/bash
+rm -rf allure_pytest_export/ && rm -rf allure_html_generate/
+echo "param: $1";
+pytest -s -o log_cli=true -o log_cli_level="INFO"  -m '' -k '' --html=report_pytest_html/$1_report.html --self-contained-html --json-report --json-report-file=report_pytest_json/$1_report.json --json-report-indent=2 --alluredir=allure_pytest_export test/test_manual/$1.py
+# parking/enforcement/login_enforcement_2022-10-15
+allure generate allure_pytest_export/ --clean -o allure_html_generate/ && allure-combine allure_html_generate/ && install -D allure_html_generate/complete.html report_allure/$1_allure.html
+rm -rf allure_pytest_export/ && rm -rf allure_html_generate/
