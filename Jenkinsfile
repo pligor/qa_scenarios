@@ -42,10 +42,13 @@ properties([
         ]),
 ])
 
-node('automation_dev') {
+pipeline {
+    agent {
+        label 'master'
+    }
     //Now we have changed this from the `winqa` to make it execute in the node of the local Jenkins in my linux laptop
     stage('Checkout') {
-        echo 'Checkout project from GitLab...'
+        echo 'Checkout project'
         checkout([$class                           : 'GitSCM',
                   branches                         : [[name: "${branch_name}"]],
                   doGenerateSubmoduleConfigurations: false,
