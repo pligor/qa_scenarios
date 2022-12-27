@@ -48,86 +48,94 @@ pipeline {
     }
     stages {
         stage('Checkout') {
-            echo 'Checkout project'
-            checkout([$class                           : 'GitSCM',
-                      branches                         : [[name: "${branch_name}"]],
-                      doGenerateSubmoduleConfigurations: false,
-    //                  extensions                       : scm.extensions + [[$class: 'LocalBranch'], [$class: 'WipeWorkspace']],
-                      extensions                       : scm.extensions + [[$class: 'LocalBranch']], //removing the WipeWorkspace to allow for Allure to generate its Trend Graph by keeping history
-                      submoduleCfg                     : [],
-    //                   userRemoteConfigs                : [[credentialsId: 'jenkins', url: 'git@github.com:pligor/qa_scenarios.git']]
-                      userRemoteConfigs                : [[url: 'git@github.com:pligor/qa_scenarios.git']]
-            ])
+            steps{
+                echo 'Checkout project'
+                checkout([$class                           : 'GitSCM',
+                          branches                         : [[name: "${branch_name}"]],
+                          doGenerateSubmoduleConfigurations: false,
+        //                  extensions                       : scm.extensions + [[$class: 'LocalBranch'], [$class: 'WipeWorkspace']],
+                          extensions                       : scm.extensions + [[$class: 'LocalBranch']], //removing the WipeWorkspace to allow for Allure to generate its Trend Graph by keeping history
+                          submoduleCfg                     : [],
+        //                   userRemoteConfigs                : [[credentialsId: 'jenkins', url: 'git@github.com:pligor/qa_scenarios.git']]
+                          userRemoteConfigs                : [[url: 'git@github.com:pligor/qa_scenarios.git']]
+                ])
+            }
         }
 
         stage('Build') {
-            echo "============================================"
-            echo "Building project with current build url being: ${BUILD_URL}"
-            echo "with parameters:"
-            echo "environment_name: ${environment_name}"
-            echo "branch_name: ${branch_name}"
-            echo "tag_filtering: ${tag_filtering}"
-            echo "name_filtering: ${name_filtering}"
-            echo "scope_filtering: ${scope_filtering}"
-            echo "============================================"
+            steps {
+                echo "============================================"
+                echo "Building project with current build url being: ${BUILD_URL}"
+                echo "with parameters:"
+                echo "environment_name: ${environment_name}"
+                echo "branch_name: ${branch_name}"
+                echo "tag_filtering: ${tag_filtering}"
+                echo "name_filtering: ${name_filtering}"
+                echo "scope_filtering: ${scope_filtering}"
+                echo "============================================"
 
-    //         sh '''#!/bin/bash
-    //             source /home/jenkins/venvs/api_gateway_venv/bin/activate && pip install -r requirements.txt && pip install -r test-requirements.txt'''
-    //         echo "all requirements should have been pip installed"
-    //
-    //         try {
-    //             sh 'rm -f allure_result/*'
-    //         } catch(err) { // alternatively we could append ` || true` to the script to prevent it from failing: https://stackoverflow.com/a/25745593/720484
-    //         }
-    //         echo "empty directory of previous Allure Results without destroying the history folder"
+        //         sh '''#!/bin/bash
+        //             source /home/jenkins/venvs/api_gateway_venv/bin/activate && pip install -r requirements.txt && pip install -r test-requirements.txt'''
+        //         echo "all requirements should have been pip installed"
+        //
+        //         try {
+        //             sh 'rm -f allure_result/*'
+        //         } catch(err) { // alternatively we could append ` || true` to the script to prevent it from failing: https://stackoverflow.com/a/25745593/720484
+        //         }
+        //         echo "empty directory of previous Allure Results without destroying the history folder"
+            }
         }
 
         /* stage('Run scenarios') {
-            echo "============================================"
-            echo 'Automation scenarios are executed'
-            echo "============================================"
+            steps {
+                echo "============================================"
+                echo 'Automation scenarios are executed'
+                echo "============================================"
 
-            try {
-                sh """#!/bin/bash
-              source /home/jenkins/venvs/api_gateway_venv/bin/activate && \
-              ENVIRONMENT_NAME=${environment_name} \
-              pytest --html=report_pytest_html/report.html --self-contained-html --alluredir=allure_result -s \
-              -m '${tag_filtering}' -k '${name_filtering}' -o log_cli=true -o log_cli_level=INFO '${scope_filtering}' \
-              --slack_hook="https://hooks.slack.com/services/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" \
-              --slack_channel='proj-usagateway-ci' --slack_report_link='${BUILD_URL}' """
-            } catch(err) {
-                echo "pytest error: ${err}"
-                currentBuild.result = 'FAILURE'
+                try {
+                    sh """#!/bin/bash
+                  source /home/jenkins/venvs/api_gateway_venv/bin/activate && \
+                  ENVIRONMENT_NAME=${environment_name} \
+                  pytest --html=report_pytest_html/report.html --self-contained-html --alluredir=allure_result -s \
+                  -m '${tag_filtering}' -k '${name_filtering}' -o log_cli=true -o log_cli_level=INFO '${scope_filtering}' \
+                  --slack_hook="https://hooks.slack.com/services/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" \
+                  --slack_channel='proj-usagateway-ci' --slack_report_link='${BUILD_URL}' """
+                } catch(err) {
+                    echo "pytest error: ${err}"
+                    currentBuild.result = 'FAILURE'
+                }
             }
         }
 
         stage('Publish reports') {
-            echo "============================================"
-            echo 'Publishing pytest-html report'
-            echo "============================================"
+            steps {
+                echo "============================================"
+                echo 'Publishing pytest-html report'
+                echo "============================================"
 
-            publishHTML(target: [
-                    keepAll    : true,
-                    reportDir  : 'report_pytest_html',
-                    reportFiles: 'report.html',
-                    reportName : 'Static HTML Report'
-            ])
+                publishHTML(target: [
+                        keepAll    : true,
+                        reportDir  : 'report_pytest_html',
+                        reportFiles: 'report.html',
+                        reportName : 'Static HTML Report'
+                ])
 
-            echo "============================================"
-            echo 'Publishing Allure report'
-            echo "============================================"
+                echo "============================================"
+                echo 'Publishing Allure report'
+                echo "============================================"
 
-            sh '/home/jenkins/allure-2.13.8/bin/allure generate allure_result/ --clean -o report_allure/'
+                sh '/home/jenkins/allure-2.13.8/bin/allure generate allure_result/ --clean -o report_allure/'
 
-            publishHTML(target: [
-                    keepAll    : true,
-                    reportDir  : 'report_allure',
-                    reportFiles: 'index.html',
-                    reportName : 'Allure Report'
-            ])
+                publishHTML(target: [
+                        keepAll    : true,
+                        reportDir  : 'report_allure',
+                        reportFiles: 'index.html',
+                        reportName : 'Allure Report'
+                ])
 
-            //https://stackoverflow.com/a/50499775/720484
-            sh 'cp -rf report_allure/history allure_result/'
+                //https://stackoverflow.com/a/50499775/720484
+                sh 'cp -rf report_allure/history allure_result/'
+            }
         } */
     }
 }
