@@ -1,6 +1,6 @@
 #!/usr/bin/groovy
 
-//We are using scripted pipeline and not declarative pipeline syntax as described here: https://stackoverflow.com/questions/42050626/jenkins-pipeline-agent-vs-node
+//We are using declarative pipeline syntax and not the scripted pipeline as described here: https://stackoverflow.com/questions/42050626/jenkins-pipeline-agent-vs-node
 properties([
         //https://stackoverflow.com/questions/35370810/how-do-i-use-jenkins-pipeline-properties-step
         parameters([
@@ -76,10 +76,8 @@ pipeline {
                     pyenv activate myenv && pip install -r requirements.txt && source deactivate'''
                 echo "all requirements should have been pip installed"
 
-                try {
-                    sh 'rm -f allure_result/*'
-                } catch(err) { // alternatively we could append ` || true` to the script to prevent it from failing: https://stackoverflow.com/a/25745593/720484
-                }
+                // we can append ` || true` to the script to prevent it from failing: https://stackoverflow.com/a/25745593/720484
+                sh 'rm -f allure_result/* || true'
                 echo "emptied directory of previous Allure Results without destroying the history folder"
             }
         }
