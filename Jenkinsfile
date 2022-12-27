@@ -72,15 +72,15 @@ pipeline {
                 echo "scope_filtering: ${scope_filtering}"
                 echo "============================================"
 
-        //         sh '''#!/bin/bash
-        //             source /home/jenkins/venvs/api_gateway_venv/bin/activate && pip install -r requirements.txt && pip install -r test-requirements.txt'''
-        //         echo "all requirements should have been pip installed"
-        //
-        //         try {
-        //             sh 'rm -f allure_result/*'
-        //         } catch(err) { // alternatively we could append ` || true` to the script to prevent it from failing: https://stackoverflow.com/a/25745593/720484
-        //         }
-        //         echo "empty directory of previous Allure Results without destroying the history folder"
+                sh '''#!/bin/bash
+                    pyenv activate myenv && pip install -r requirements.txt && source deactivate'''
+                echo "all requirements should have been pip installed"
+
+                try {
+                    sh 'rm -f allure_result/*'
+                } catch(err) { // alternatively we could append ` || true` to the script to prevent it from failing: https://stackoverflow.com/a/25745593/720484
+                }
+                echo "emptied directory of previous Allure Results without destroying the history folder"
             }
         }
 
