@@ -73,7 +73,7 @@ pipeline {
                 echo "============================================"
 
                 sh '''#!/bin/bash
-                    pyenv activate myenv && pip install -r requirements.txt && source deactivate'''
+                    source ~/.bashrc && pyenv activate myenv && python -m pip install -r requirements.txt && source deactivate'''
                 echo "all requirements should have been pip installed"
 
                 // we can append ` || true` to the script to prevent it from failing: https://stackoverflow.com/a/25745593/720484
