@@ -1,5 +1,4 @@
 #!/usr/bin/groovy
-@Library('xm-pipeline-library') _
 
 //We are using scripted pipeline and not declarative pipeline syntax as described here: https://stackoverflow.com/questions/42050626/jenkins-pipeline-agent-vs-node
 properties([
@@ -8,12 +7,16 @@ properties([
                 //note here that the default will be the element you have as a first choice in the array
                 choice(name: 'environment_name', choices: ['test', 'dev', 'staging', 'production'],
                         description: 'Choose the environment you want to execute the automated scenarios'),
-                string(name: 'branch_name', defaultValue: 'master',
+
+                string(name: 'branch_name', defaultValue: 'main',
                         description: 'branch name which is going to be used to git clone the project'),
-                string(name: 'tag_filtering', defaultValue: '(not disabled) and (smoke or watchlist)',
+
+                string(name: 'tag_filtering', defaultValue: '(not disabled) and smoke',
                         description: 'define which scenarios to run based on their tags (custom markers). Leave empty for all. This will be the value for the -m parameter of pytest'),
+
                 string(name: 'name_filtering', defaultValue: '',
                         description: 'will this string expression will be contained as part of filename/classname/methodname/functionname? If yes the test will be included. Leave empty for all. This will be the value for the -k parameter of pytest'),
+
                 string(name: 'scope_filtering', defaultValue: 'test/',
                         description: 'do NOT leave empty. Choose folder or file. You may also specify tests within a class like so: test_mod.py::TestClass::test_method or inside a method like so: test_mod.py::test_func'),
         ]),
@@ -49,7 +52,8 @@ node('automation_dev') {
 //                  extensions                       : scm.extensions + [[$class: 'LocalBranch'], [$class: 'WipeWorkspace']],
                   extensions                       : scm.extensions + [[$class: 'LocalBranch']], //removing the WipeWorkspace to allow for Allure to generate its Trend Graph by keeping history
                   submoduleCfg                     : [],
-                  userRemoteConfigs                : [[credentialsId: 'jenkins', url: 'git@gitlab.xm.com:gpligoropoulos/api_gateway_python.git']]
+//                   userRemoteConfigs                : [[credentialsId: 'jenkins', url: 'git@github.com:pligor/qa_scenarios.git']]
+                  userRemoteConfigs                : [[url: 'git@github.com:pligor/qa_scenarios.git']]
         ])
     }
 
@@ -64,18 +68,18 @@ node('automation_dev') {
         echo "scope_filtering: ${scope_filtering}"
         echo "============================================"
 
-        sh '''#!/bin/bash
-            source /home/jenkins/venvs/api_gateway_venv/bin/activate && pip install -r requirements.txt && pip install -r test-requirements.txt'''
-        echo "all requirements should have been pip installed"
-
-        try {
-            sh 'rm -f allure_result/*'
-        } catch(err) { // alternatively we could append ` || true` to the script to prevent it from failing: https://stackoverflow.com/a/25745593/720484
-        }
-        echo "empty directory of previous Allure Results without destroying the history folder"
+//         sh '''#!/bin/bash
+//             source /home/jenkins/venvs/api_gateway_venv/bin/activate && pip install -r requirements.txt && pip install -r test-requirements.txt'''
+//         echo "all requirements should have been pip installed"
+//
+//         try {
+//             sh 'rm -f allure_result/*'
+//         } catch(err) { // alternatively we could append ` || true` to the script to prevent it from failing: https://stackoverflow.com/a/25745593/720484
+//         }
+//         echo "empty directory of previous Allure Results without destroying the history folder"
     }
 
-    stage('Run scenarios') {
+    /* stage('Run scenarios') {
         echo "============================================"
         echo 'Automation scenarios are executed'
         echo "============================================"
@@ -121,5 +125,5 @@ node('automation_dev') {
 
         //https://stackoverflow.com/a/50499775/720484
         sh 'cp -rf report_allure/history allure_result/'
-    }
+    } */
 }
