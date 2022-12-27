@@ -21,7 +21,11 @@
 - Make sure that the Chrome version being used for Selenium executions is the one most popular among our customers
 
 # HOW TO EXECUTE
-Execute pytest command:  
+Execute a dummy simple pytest command:
+
+    ENVIRONMENT_NAME=test pytest -s -o log_cli=true -o log_cli_level="INFO"  -m '' -k '' test/test_web/test_testing/test_hello_world.py
+
+Execute typical pytest command:  
 
     rm -rf allure_result && ENVIRONMENT_NAME=test pytest -n 4 -s -o log_cli=true -o log_cli_level="INFO"  -m 'not (hello_world or disabled)' -k '' --alluredir=allure_result test/ && allure serve allure_result
 
