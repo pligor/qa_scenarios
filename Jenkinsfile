@@ -17,7 +17,7 @@ properties([
                 string(name: 'name_filtering', defaultValue: '',
                         description: 'will this string expression will be contained as part of filename/classname/methodname/functionname? If yes the test will be included. Leave empty for all. This will be the value for the -k parameter of pytest'),
 
-                string(name: 'scope_filtering', defaultValue: 'test/',
+                string(name: 'scope_filtering', defaultValue: 'test/test_dummy.py',
                         description: 'do NOT leave empty. Choose folder or file. You may also specify tests within a class like so: test_mod.py::TestClass::test_method or inside a method like so: test_mod.py::test_func'),
         ]),
 
