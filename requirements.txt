@@ -51,10 +51,7 @@ google-auth
 google-auth-oauthlib
 google-pasta
 grpcio
-gym
-gym-notices
 h11
-h5py
 huggingface-hub
 huggingface-sb3
 idna
@@ -80,8 +77,6 @@ jupyterlab-limit-output
 jupyterlab-pygments
 jupyterlab-server
 jupyterlab-widgets
-keras
-Keras-Preprocessing
 kiwisolver
 libclang
 lxml
@@ -101,7 +96,6 @@ notebook
 notebook-shim
 numpy
 oauthlib
-openai
 openpyxl
 opt-einsum
 outcome
@@ -189,7 +183,6 @@ tinycss2
 tokenizers
 toml
 tomli
-torch
 tornado
 tqdm
 traitlets
