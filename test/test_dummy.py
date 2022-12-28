@@ -10,3 +10,5 @@ def test_nothing():
 @pytest.mark.parametrize("myparam", ['this', 'that'])
 def test_params(myparam):
     print(myparam)
+    if myparam == 'that':
+        pytest.fail('it fails when the myparam is "that"')
