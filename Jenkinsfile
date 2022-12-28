@@ -105,37 +105,54 @@ pipeline {
                 // --slack_channel='some-slack-channel' --slack_report_link='${BUILD_URL}'
             }
         }
+    }
+    post {
+        always {
+            //this block is executed after the pipeline finishes regardless of whether it succeeded or failed
+            echo "============================================"
+            echo 'Publishing pytest-html report'
+            echo "============================================"
 
-        /*
-        stage('Publish reports') {
-            steps {
-                echo "============================================"
-                echo 'Publishing pytest-html report'
-                echo "============================================"
+            publishHTML(target: [
+                    keepAll    : true,
+                    reportDir  : 'report_pytest_html',
+                    reportFiles: 'report.html',
+                    reportName : 'Static HTML Report'
+            ])
 
-                publishHTML(target: [
-                        keepAll    : true,
-                        reportDir  : 'report_pytest_html',
-                        reportFiles: 'report.html',
-                        reportName : 'Static HTML Report'
-                ])
+            // here we are certain that at least the simple html report is generated
 
-                echo "============================================"
-                echo 'Publishing Allure report'
-                echo "============================================"
-
-                sh '/home/jenkins/allure-2.13.8/bin/allure generate allure_result/ --clean -o report_allure/'
-
-                publishHTML(target: [
-                        keepAll    : true,
-                        reportDir  : 'report_allure',
-                        reportFiles: 'index.html',
-                        reportName : 'Allure Report'
-                ])
-
-                //https://stackoverflow.com/a/50499775/720484
-                sh 'cp -rf report_allure/history allure_result/'
-            }
-        } */
+//             echo "============================================"
+//             echo 'Publishing Allure report'
+//             echo "============================================"
+//
+//             sh
+//
+//
+//
+// system('allure generate allure_pytest_export/ --clean -o allure_html_generate/ && allure-combine allure_html_generate/')
+//
+//
+// system(f'mkdir -p report_allure/{dir_path}')
+//
+//
+// system(f'mv allure_html_generate/complete.html report_allure/{dir_file_path}_allure.html')
+//
+//
+// system('rm -rf allure_pytest_export/ && rm -rf allure_html_generate/')
+//
+//
+//             sh 'allure generate allure_result/ --clean -o report_allure/'
+//
+//             publishHTML(target: [
+//                     keepAll    : true,
+//                     reportDir  : 'report_allure',
+//                     reportFiles: 'index.html',
+//                     reportName : 'Allure Report'
+//             ])
+//
+//             //https://stackoverflow.com/a/50499775/720484
+//             sh 'cp -rf report_allure/history allure_result/'
+        }
     }
 }
