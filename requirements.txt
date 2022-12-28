@@ -108,7 +108,6 @@ parso
 pathspec
 patsy
 pexpect
-pickle5
 pickleshare
 Pillow
 pip-review
