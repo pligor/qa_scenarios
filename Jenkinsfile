@@ -82,27 +82,31 @@ pipeline {
             }
         }
 
-        /* stage('Run scenarios') {
+        stage('Run scenarios') {
             steps {
                 echo "============================================"
-                echo 'Automation scenarios are executed'
+                echo 'Automation scenarios execution is starting'
                 echo "============================================"
 
-                try {
-                    sh """#!/bin/bash
-                  source /home/jenkins/venvs/api_gateway_venv/bin/activate && \
-                  ENVIRONMENT_NAME=${environment_name} \
-                  pytest --html=report_pytest_html/report.html --self-contained-html --alluredir=allure_result -s \
-                  -m '${tag_filtering}' -k '${name_filtering}' -o log_cli=true -o log_cli_level=INFO '${scope_filtering}' \
-                  --slack_hook="https://hooks.slack.com/services/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" \
-                  --slack_channel='proj-usagateway-ci' --slack_report_link='${BUILD_URL}' """
-                } catch(err) {
-                    echo "pytest error: ${err}"
-                    currentBuild.result = 'FAILURE'
-                }
+                //-s -o log_cli=true -o log_cli_level='INFO'  <-- we have omitted this part of pytest as in general,
+                //we will not be staring the console of the jenkins quite often, rather the report
+                sh """#!/bin/bash
+                source ~/.bashrc && pyenv activate myenv && \
+                ENVIRONMENT_NAME=${environment_name} \
+                pytest \
+                --html=report_pytest_html/report.html --self-contained-html \
+                --json-report --json-report-file=report_pytest_json/report.json --json-report-indent=2 \
+                --alluredir=allure_pytest_export \
+                -m '${tag_filtering}' -k '${name_filtering}' '${scope_filtering}' && \
+                source deactivate
+                """
+                // extra parameters if you wish to send a slack message at the end of the executions
+                // --slack_hook="https://hooks.slack.com/services/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" \
+                // --slack_channel='some-slack-channel' --slack_report_link='${BUILD_URL}'
             }
         }
 
+        /*
         stage('Publish reports') {
             steps {
                 echo "============================================"
