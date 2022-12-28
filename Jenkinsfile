@@ -98,8 +98,7 @@ pipeline {
                 --json-report --json-report-file=report_pytest_json/report.json --json-report-indent=2 \
                 --alluredir=allure_pytest_export \
                 -m '${tag_filtering}' -k '${name_filtering}' '${scope_filtering}' && \
-                source deactivate
-                """
+                source deactivate"""
                 // extra parameters if you wish to send a slack message at the end of the executions
                 // --slack_hook="https://hooks.slack.com/services/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" \
                 // --slack_channel='some-slack-channel' --slack_report_link='${BUILD_URL}'
@@ -139,12 +138,10 @@ pipeline {
             echo 'Publishing Allure report combined in a single html file'
             echo "========================================================="
 
-            sh '''
-            #!/bin/bash
+            sh '''#!/bin/bash
             source ~/.bashrc && pyenv activate myenv && \
             allure-combine allure_html_generate/ && \
-            source deactivate
-            '''
+            source deactivate'''
             sh 'mkdir -p report_allure/'
             sh 'mv allure_html_generate/complete.html report_allure/report_allure.html'
 
