@@ -122,37 +122,46 @@ pipeline {
 
             // here we are certain that at least the simple html report is generated
 
-//             echo "============================================"
-//             echo 'Publishing Allure report'
-//             echo "============================================"
-//
-//             sh
-//
-//
-//
-// system('allure generate allure_pytest_export/ --clean -o allure_html_generate/ && allure-combine allure_html_generate/')
-//
-//
-// system(f'mkdir -p report_allure/{dir_path}')
-//
-//
-// system(f'mv allure_html_generate/complete.html report_allure/{dir_file_path}_allure.html')
-//
-//
-// system('rm -rf allure_pytest_export/ && rm -rf allure_html_generate/')
-//
-//
-//             sh 'allure generate allure_result/ --clean -o report_allure/'
-//
-//             publishHTML(target: [
-//                     keepAll    : true,
-//                     reportDir  : 'report_allure',
-//                     reportFiles: 'index.html',
-//                     reportName : 'Allure Report'
-//             ])
-//
-//             //https://stackoverflow.com/a/50499775/720484
-//             sh 'cp -rf report_allure/history allure_result/'
+            echo "============================================"
+            echo 'Publishing Allure report'
+            echo "============================================"
+
+            sh 'allure generate allure_pytest_export/ --clean -o allure_html_generate/'
+
+            publishHTML(target: [
+                    keepAll    : true,
+                    reportDir  : 'allure_html_generate',
+                    reportFiles: 'index.html',
+                    reportName : 'Allure Report'
+            ])
+
+            echo "========================================================="
+            echo 'Publishing Allure report combined in a single html file'
+            echo "========================================================="
+
+            sh '''
+            #!/bin/bash
+            source ~/.bashrc && pyenv activate myenv && \
+            allure-combine allure_html_generate/ && \
+            source deactivate
+            '''
+            sh 'mkdir -p report_allure/'
+            sh 'mv allure_html_generate/complete.html report_allure/report_allure.html'
+
+            publishHTML(target: [
+                    keepAll    : true,
+                    reportDir  : 'report_allure',
+                    reportFiles: 'report_allure.html',
+                    reportName : 'Allure Packed Single Html'
+            ])
+
+            echo "============================================"
+            echo 'Preserving the Allure history of executions'
+            echo "============================================"
+
+            //https://stackoverflow.com/a/50499775/720484
+            sh 'cp -rf allure_html_generate/history allure_pytest_export/'
+            // therefore we will NOT be erasing the allure_pytest_export
         }
     }
 }
