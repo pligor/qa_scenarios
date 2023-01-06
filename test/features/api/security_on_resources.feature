@@ -12,6 +12,7 @@ Feature: Improve email verification flow for all apps - Use verifications to pro
   @prio_critical @smoke @CKA9FBRuijCvmjfyUmubDqj
   Scenario: Verify that using a user who has not verified his/her email address but is attempting to verify his/her mobile phone number, this will yield a corresponding error message that will explain to the user of what actions he/she needs to take in order to proceed with the verification of the mobile phone number
 
+
   @prio_critical @smoke @C2QeNg6kHXv36iBh6xTHTjG
   Scenario: Verify that a user who has verified his/her email address when attempting to verify his/her mobile phone number, this will be successful given that the phone number is valid and the 4 digit code that the user received as OTP was used properly
     Swift Parking
