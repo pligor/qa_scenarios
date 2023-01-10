@@ -8,7 +8,7 @@ from screens.testing_screens.home_screen import signup_menu_button
 from screens.testing_screens.signup_screen import SignupForm, name_field, email_field, password_field, company_field, address_field, \
     signup_action, label_name, label_email, label_password, label_company, label_address, name_error_message, \
     email_error_message, password_error_message, does_name_error_exists, does_password_error_exists
-from screens.testing_screens.verify_account_screen import verify_title
+from screens.testing_screens.verify_account_screen import verify_title, verify_content
 
 
 @scenario_step
@@ -34,7 +34,7 @@ def step_assert_signup_form(signup_form: SignupForm):
 @scenario_step
 def step_assert_verify_screen():
     verify_title.should(be.visible.and_(have.exact_text('Verify your account')))
-    verify_title.should(be.visible)
+    verify_content.should(be.visible)
 
 
 @scenario_step
