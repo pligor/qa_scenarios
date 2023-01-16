@@ -70,5 +70,9 @@ smokepass: the ticket has passed a basic superficial check
 defectspending: all the scenarios have been executed for this ticket and some linked defects are pending
 reopened: the ticket has some defects and have been returned to the dev team for solving those issues
 
+## Page Object Model
+For Page Object Model better spend one day to build your own instead of relying on some library that has assumptions because everyone likes it a bit differently
+Here is one starting point: https://medium.com/@zeitdeuter/page-object-models-implementation-with-pytest-b9673744b8c0 
+
 ## Authors
 George Pligoropoulos
